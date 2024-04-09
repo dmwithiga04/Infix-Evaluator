@@ -1,8 +1,9 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
  * @author Davine Mungai
- * This class provides a utility for evaluating infix expressions.
+ *         This class provides a utility for evaluating infix expressions.
  */
 public class InfixEvaluator {
 
@@ -28,8 +29,10 @@ public class InfixEvaluator {
      * @param op the character to be checked
      * @return true if the character is an operator, false otherwise
      */
-    private boolean isOperator(Character op) {
-        return false;
+    private boolean isOperator(String token) {
+
+        return token.equals("+") || token.equals("-") || token.equals("*")
+                || token.equals("/") || token.equals("^");
     }
 
     /**
@@ -42,9 +45,28 @@ public class InfixEvaluator {
 
         // stacks to contain operands and operators
         Stack<Integer> operandStack = new Stack<>();
-        Stack<Character> operatorStack = new Stack<>();
+        Stack<String> operatorStack = new Stack<>();
+        // contain result of processing the expression
+        int result = 0;
 
-        return 0;
+        // scanner to read expression space by space
+        Scanner scanner = new Scanner(expression);
+        scanner.useDelimiter(" ");
+
+        //push 1st operand and operator to stack
+        operandStack.push(Integer.valueOf(scanner.next()));
+        operatorStack.push(scanner.next());
+
+        while (scanner.hasNextLine()) {
+            // contsins current token
+            String token = scanner.next();
+
+            }
+
+            
+        }
+
+        return result;
     }
 
 }
