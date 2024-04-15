@@ -35,6 +35,20 @@ public class InfixEvaluator {
                 || token.equals("/") || token.equals("^");
     }
 
+    private int precedence (String token) {
+        //TODO: finish this off
+        switch (token) {
+            case "/":
+                return 1;
+                break;
+            
+            case "^":
+                return 2;
+                break;
+        }
+
+    }
+
     /**
      * Evaluates an infix expression and returns the result.
      *
