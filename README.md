@@ -1,18 +1,65 @@
-## Getting Started
+# Infix Evaluator Project
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Project Overview
 
-## Folder Structure
+This project implements an **Infix Expression Evaluator** in Java. The evaluator processes mathematical expressions written in infix notation (e.g., `(3 + 5) * 2`) and returns the result. It supports basic arithmetic operations, including addition, subtraction, multiplication, division, modulus, and exponentiation, while respecting operator precedence and parentheses.
 
-The workspace contains two folders by default, where:
+## Features
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **Infix Evaluation**: Supports evaluation of infix expressions with parentheses and operators.
+- **Operator Precedence**: Handles precedence of operators (`^`, `*`, `/`, `%`, `+`, `-`).
+- **Error Handling**: Includes a custom exception class to handle syntax errors, such as unbalanced parentheses.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Key Functions
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- `evaluate(String expression)`: Evaluates the given infix expression and returns the result.
+- `calculateDigits(int lHS, int rHS, String operator)`: Performs calculations based on the operator between two operands.
+- `precedence(String operator)`: Returns the precedence of a given operator.
+- `isOperator(String token)`: Checks if a string is a valid operator.
 
-## Dependency Management
+## Tech Stack
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Language**: Java
+- **Concepts Applied**: Stack Data Structure, Operator Precedence, Error Handling, Expression Parsing
+
+## Example Code with Main Method
+
+Here’s how you can use the `InfixEvaluator` class with a `main` method to evaluate an infix expression:
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        // Example infix expression
+        String expression = "( 3 + 5 ) * 2";
+    
+        // Evaluate the expression using InfixEvaluator
+        int result = InfixEvaluator.evaluate(expression);
+        System.out.println("The result of the expression '" + expression + "' is: " + result);
+    
+    }
+}
+```
+
+### Example Output:
+```
+The result of the expression '( 3 + 5 ) * 2' is: 16
+```
+
+## How to Run
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repo_url>
+   cd InfixEvaluator
+   ```
+
+2. **Compile the code**:
+   ```bash
+   javac Main.java InfixEvaluator.java
+   ```
+
+3. **Run the program**:
+   ```bash
+   java Main
+   ```
